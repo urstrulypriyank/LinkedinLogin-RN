@@ -7,10 +7,10 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native';
-import React from 'react';
-import {CheckBox} from 'react-native-elements';
-
+import React, {useState} from 'react';
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
 export default function App() {
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
     <SafeAreaView>
       <View style={styles.bgWhite}>
@@ -51,9 +51,17 @@ export default function App() {
             placeholder="Password"
             secureTextEntry={true}
           />
-          <View style={[styles.flexRow, {marginTop: 10}]}>
-            <CheckBox title="My Checkbox" checked={isChecked} />
-            <Text>Remember To </Text>
+          <View style={[styles.flexRow, {marginTop: 10, alignItems: 'center'}]}>
+            <BouncyCheckbox
+              size={20}
+              fillColor="red"
+              unfillColor="#FFFFFF"
+              text="Remember To"
+              iconStyle={{ borderRadius: 0, borderStyle: undefined}}
+              innerIconStyle={{borderWidth: 0}}
+              onPress={(isChecked: boolean) => {}}
+              style={{borderRadius: 0}}
+            />
             <Text style={{color: LinkedinColor, fontWeight: 'bold'}}>
               Learn More
             </Text>
