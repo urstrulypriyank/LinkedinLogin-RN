@@ -57,9 +57,11 @@ export default function App() {
               fillColor="red"
               unfillColor="#FFFFFF"
               text="Remember To"
-              iconStyle={{ borderRadius: 0, borderStyle: undefined}}
+              iconStyle={{borderRadius: 0, borderStyle: undefined}}
               innerIconStyle={{borderWidth: 0}}
-              onPress={(isChecked: boolean) => {}}
+              onPress={(toggleCheckBox: boolean) => {
+                setToggleCheckBox(!toggleCheckBox);
+              }}
               style={{borderRadius: 0}}
             />
             <Text style={{color: LinkedinColor, fontWeight: 'bold'}}>
